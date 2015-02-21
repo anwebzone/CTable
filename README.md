@@ -1,3 +1,6 @@
-#CTable
+#CTable v1.0
 
-My basic class for generating HTML tables.
+###Purpose
+CTable is a basic class for generating HTML Tables. 
+
+
