@@ -1,3 +1,3 @@
 #CTable
 
-My basic class for generation HTML tables.
+My basic class for generating HTML tables.
