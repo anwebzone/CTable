@@ -10,11 +10,35 @@ namespace Ann\HTMLTable;
  
 class CTable
 {
+		public $data, $remove;
 
-		public function __construct()
+		 /**
+     * Constructor
+     *
+     * @param array $data, data to display in a table, preferably database array.
+     * @param array $remove, column names to remove before creating html table.
+     */
+		public function __construct($data = [], $remove = [])
 		{
-				echo 'Class CTable loaded.';
+				$this->remove($data, $remove);
 		
+		}
+		
+		/**
+		 * Remove columns from data.
+		 *
+		 */
+		public function remove($data = [], $remove = [])
+		{
+				$this->data = $data;
+				$this->remove = $remove;
+				
+				for($i = 0; $i < count($this->data); $i++) {
+						foreach($this->remove AS $column) {
+								unset($this->data[$i][$column]);
+						}
+				}
+			
 		}
 
 }
