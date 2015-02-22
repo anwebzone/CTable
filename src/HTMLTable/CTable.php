@@ -38,7 +38,7 @@ class CTable
 				
 				for($i = 0; $i < count($this->data); $i++) {
 						foreach($this->remove AS $column) {
-								unset($this->data[$i][$column]);
+								unset($this->data[$i]->$column);
 						}
 				}
 			
