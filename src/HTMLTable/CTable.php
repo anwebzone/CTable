@@ -22,8 +22,6 @@ class CTable
 		public function __construct($data = [], $remove = [])
 		{
 				$this->remove($data, $remove);
-				
-				print_r($this->data);
 		
 		}
 		
