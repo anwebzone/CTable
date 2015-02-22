@@ -1,0 +1,22 @@
+{
+    "name": "ann/ctable",    
+    "type": "library",
+    "description": "Classes for HTML Tables",
+    "keywords": ["html", "table", "education"],
+    "homepage": "http://webzone.se",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andreas Nilsson",
+            "email": "andreas@webzone.se",
+            "homepage": "http://webzone.se",
+            "role": "Student"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "Ann\\": "src/" }
+    }
+}
