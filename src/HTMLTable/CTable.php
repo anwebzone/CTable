@@ -10,7 +10,8 @@ namespace Ann\HTMLTable;
  
 class CTable
 {
-		public $data, $remove;
+		public $data;
+		public $remove;
 
 		 /**
      * Constructor
@@ -21,6 +22,8 @@ class CTable
 		public function __construct($data = [], $remove = [])
 		{
 				$this->remove($data, $remove);
+				
+				print_r($this->data);
 		
 		}
 		
