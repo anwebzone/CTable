@@ -23,29 +23,35 @@ class CTable
      */
 		public function __construct($data = [], $remove = [], $class = null)
 		{
-				$this->remove($data, $remove);
-				$this->table = $this->create($this->data, $class);
+				$this->create($data, $remove, $class);
 		}
 		
 		/**
 		 *	Create HTML Table with $data.
 		 *
 		 */
-		private function create($data, $class)
+		public function create($data = [], $remove = [], $class = null)
 		{
+				$this->data = null;
+				// Remove keys from $data specified in array $remove, set $this->data instead.
+				$this->data = $this->remove($data, $remove);
+				
 				// Get first key?
-				$first_key = current(array_keys($data));
+				$first_key = current(array_keys($this->data));
+				
+				//var_dump($first_key);
+				//var_dump($this->data);
 				
 				$table = '<table class="' . $class . '">
 										<thead>
-											<tr>' . $this->head($data[$first_key]) . '</tr>
+											<tr>' . $this->head($this->data[$first_key]) . '</tr>
 										</thead>
 										<tbody>
-											' . $this->body($data) . '
+											' . $this->body($this->data) . '
 										</tbody>
 									</table>';
 									
-				return $table;
+				return $this->table = $table;
 				
 		}
 		
@@ -72,6 +78,8 @@ class CTable
 								}
 						}
 				}	
+				
+				return $this->data;
 		}
 		
 		
@@ -100,7 +108,7 @@ class CTable
 		 * Create table body with $data.
 		 *
 		 */
-		private function body($data)
+		private function body($data = [])
 		{
 				$body = null;
 				for($i = 0; $i < count($data); $i++)
