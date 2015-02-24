@@ -39,9 +39,6 @@ class CTable
 				// Get first key?
 				$first_key = current(array_keys($this->data));
 				
-				//var_dump($first_key);
-				//var_dump($this->data);
-				
 				$table = '<table class="' . $class . '">
 										<thead>
 											<tr>' . $this->head($this->data[$first_key]) . '</tr>
@@ -67,6 +64,7 @@ class CTable
 				for($i = 0; $i < count($this->data); $i++) {
 						foreach($this->remove AS $column) {
 						
+								// Different handling if object or not.
 								if(is_object($this->data[$i])) {
 										unset($this->data[$i]->$column);
 								}

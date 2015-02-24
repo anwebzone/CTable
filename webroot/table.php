@@ -56,6 +56,6 @@ $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
 $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
 	</code></pre></p>
 	<?=$table->table?>
-	<p>As you see above "password" never showed up cause CTable removed it from $data.</p>
+	<p>As you see above "password" never showed up cause CTable removed it from $data. </p>
 </body>
 </html>
