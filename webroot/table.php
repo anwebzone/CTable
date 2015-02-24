@@ -46,10 +46,14 @@ $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
 <body>
 	<h1>CTable Example: How to create HTML table with CTable.</h1>
 	<p>First of all CTable needs some data to display. This below is how my array $data looks like. This is the content I want to show in a html table.</p>
+	<pre>
 	<?=var_dump($data)?>
+	</pre>
 	<h2>I don't want to show the array key "password" to everyone.</h2>
 	<p>To remove the "password" key I add the key name in another array $remove = ['password'];</p>
+	<pre>
 	<?=var_dump($remove)?>
+	</pre>
 	<h2>Create and display table</h2>
 	<p><pre><code>
 $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
