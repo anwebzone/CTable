@@ -12,6 +12,7 @@ The string is used to add css classes to <table>
 Using CTable could look like this
 
 $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
+
 echo $table->table;
 
 
