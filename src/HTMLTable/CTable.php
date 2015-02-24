@@ -97,7 +97,7 @@ class CTable
 				}
 				
 				foreach($keys AS $header){
-						$html .= '<th>' . htmlentities($header) . '</th>';
+						$html .= '<th>' . htmlentities(ucfirst($header)) . '</th>';
 				}
 				
 				return $html;
