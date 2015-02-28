@@ -32,7 +32,9 @@ class CTable
 		 */
 		public function create($data = [], $remove = [], $class = null)
 		{
-				$this->data = null;
+				if(empty($data)) {
+						return null;
+				}
 				// Remove keys from $data specified in array $remove, set $this->data instead.
 				$this->data = $this->remove($data, $remove);
 				
@@ -131,7 +133,7 @@ class CTable
 						{					
 								foreach($keys AS $value)
 								{
-										if(empty($data[$i][$value])){
+										if(empty($data[$i][$value]) && $data[$i][$value] != '0'){
 												$data[$i][$value] = 'Null';
 										}
 										$html .= '<td>' . htmlentities($data[$i][$value]) . '</td>';
