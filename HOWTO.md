@@ -12,6 +12,12 @@ The string variable is used to add css classes to the table tag.
 $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
 echo $table->table;
 
+You can also call the method that creates the table:
+
+$table = new \Ann\HTMLTable\CTable();
+$table->create($data, $remove, 'table-css-class');
+echo $table->table;
+
 However CTable was built to display database results so if the array structure changes it will break.
 
 

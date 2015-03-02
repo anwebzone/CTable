@@ -55,10 +55,22 @@ $table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
 <?=var_dump($remove)?>
 </pre>
 <h2>Create and display table</h2>
-<p><pre><code>
-$table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
-echo $table->table;
-</code></pre></p>
+<p>
+<pre>
+	<code>
+	$table = new \Ann\HTMLTable\CTable($data, $remove, 'table-css-class');
+	echo $table->table;
+	</code>
+</pre>
+You can also do like this:
+<pre>
+	<code>
+	$table = new \Ann\HTMLTable\CTable();
+	$table->create($data, $remove, 'css-class');
+	echo $table->table;
+	</code>
+</pre>
+</p>
 <?=$table->table?>
 <p>As you see above "password" never showed up cause CTable removed it from $data. Notice that CTable was made for showing database results, if the array structure is changed CTable will break.</p>
 </body>

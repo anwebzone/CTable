@@ -58,7 +58,7 @@ class CTable
 		 * Remove columns from data.
 		 *
 		 */
-		private function remove($data = [], $remove = [])
+		public function remove($data = [], $remove = [])
 		{
 				$this->data = $data;
 				$this->remove = $remove;
@@ -74,7 +74,7 @@ class CTable
 										unset($this->data[$i][$column]);
 								}
 								else{
-										die('$data is not array or object.');
+										throw new \Exception("While trying to remove key from \$data we found that \$data[\$key] is not array or object.");
 								}
 						}
 				}	
@@ -92,7 +92,8 @@ class CTable
 				$html = null;
 				$keys = array_keys((array)$data);
 				
-				if(is_object($data)){
+				
+				if(is_object($data) && strpos($keys[0], 'di') !== false){
 						unset($keys[0]);
 				}
 				
@@ -119,7 +120,9 @@ class CTable
 						// Remove key "di".
 						if(is_object($data[$i]))
 						{
-								unset($keys[0]);
+								if(strpos($keys[0], 'di') !== false){
+										unset($keys[0]);
+								}
 								
 								foreach($keys AS $value)
 								{
