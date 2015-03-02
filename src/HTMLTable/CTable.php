@@ -19,7 +19,7 @@ class CTable
      *
      * @param array $data , data to display in a table, preferably database array.
      * @param array $remove , column names to remove before creating html table.
-		 * @param string $class , css classes to add in <table>
+		 * @param string $class , css classes to add in <table>.
      */
 		public function __construct($data = [], $remove = [], $class = null)
 		{
