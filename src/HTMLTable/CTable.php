@@ -62,8 +62,9 @@ class CTable
 		{
 				$this->data = $data;
 				$this->remove = $remove;
+				$count = count($this->data);
 				
-				for($i = 0; $i < count($this->data); $i++) {
+				for($i = 0; $i < $count; $i++) {
 						foreach($this->remove AS $column) {
 						
 								// Different handling if object or not.
@@ -112,7 +113,8 @@ class CTable
 		private function body($data = [])
 		{
 				$body = null;
-				for($i = 0; $i < count($data); $i++)
+				$count = count($data);
+				for($i = 0; $i < $count; $i++)
 				{
 						$html = null;
 						$keys = array_keys((array)$data[$i]);
